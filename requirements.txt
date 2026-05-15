@@ -1,0 +1,7 @@
+streamlit
+pymatgen
+ase
+numpy
+stmol
+ipython_genutils
+mp-api
