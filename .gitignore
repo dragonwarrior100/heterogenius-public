@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+vasp_pp/
+Comparison/
+TrialRuns/
+*.bat
+app.py
+app_diagonal.py
+HETEROSTRUCTURE_POSCAR*
