@@ -640,13 +640,16 @@ if process_btn:
                     sub_super.make_supercell(T_sub)
 
                     # --- TERMINATION SHIFT LOGIC ---
+                    if fallback_used and not use_cached_sub:
+                        termination_plane = None
+
                     if 'termination_plane' in locals() and termination_plane is not None:
-                        total_c = sub_super.lattice.matrix[2, 2]
+                        c_vec = sub_super.lattice.matrix[2]
                         new_coords = []
                         for site in sub_super:
                             c_cart = site.coords.copy()
                             if c_cart[2] > termination_plane + 0.05:
-                                c_cart[2] -= total_c
+                                c_cart -= c_vec
                             new_coords.append(c_cart)
                         
                         new_coords = np.array(new_coords)
